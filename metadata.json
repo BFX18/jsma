@@ -1,0 +1,6 @@
+{
+  "name": "Jamu Solo Mbak Ayuk",
+  "description": "Katalog 9 jamu tradisional khas Solo Mbak Ayuk dengan pilihan ukuran 250 ML & 500 ML dan sistem pemesanan langsung via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
