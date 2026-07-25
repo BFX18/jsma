@@ -222,7 +222,7 @@ export const INITIAL_STORE_INFO: StoreInfo = {
   name: 'Jamu Solo Mbak Ayuk',
   whatsappNumber: '6282258407660',
   address: 'NO. 116 RT. 01/RW. 08, KP. Jambudipa, Desa Cilebut Timur / Layanan Pesan Antar',
-  openingHours: 'Setiap Hari: 07.00 - 20.00 WIB',
+  openingHours: 'Setiap Hari: 09.00 - 21.00 WIB',
   goFoodUrl: 'https://gofood.link/a/BPSdFSm',
   grabFoodUrl: 'https://food.grab.com/id/en/restaurant/jamu-solo-mbak-ayuk-cilebut-timur-delivery/6-C2WVVX63LY3YET?k'
 };

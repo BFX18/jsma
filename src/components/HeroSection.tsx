@@ -1,7 +1,7 @@
 import React from 'react';
 import { Sparkles, ShoppingBag, CheckCircle2, MessageCircle, HeartHandshake, ShieldCheck, Zap, Info, ExternalLink } from 'lucide-react';
 import { JAMU_IMAGE_ASSETS } from '../data/images';
-import { JAMU_PRODUCTS } from '../data/jamuProducts';
+import { JAMU_PRODUCTS, INITIAL_STORE_INFO } from '../data/jamuProducts';
 import { formatRupiah } from '../utils/formatters';
 import { JamuProduct, JamuSize, StoreInfo } from '../types';
 
@@ -19,8 +19,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   storeInfo,
 }) => {
   const featuredProduct = JAMU_PRODUCTS[0]; // Kunyit Asam
-  const goFoodUrl = storeInfo?.goFoodUrl || 'https://gofood.link/a/jamu_solo_mbak_ayuk';
-  const grabFoodUrl = storeInfo?.grabFoodUrl || 'https://food.grab.com/id/id/restaurant/jamu-solo-mbak-ayuk';
+  const goFoodUrl = storeInfo?.goFoodUrl || INITIAL_STORE_INFO.goFoodUrl;
+  const grabFoodUrl = storeInfo?.grabFoodUrl || INITIAL_STORE_INFO.grabFoodUrl;
 
   return (
     <div className="relative bg-stone-900 text-stone-100 overflow-hidden border-b border-amber-900/30">

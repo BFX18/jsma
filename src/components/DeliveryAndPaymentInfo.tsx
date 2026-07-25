@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CreditCard, Truck, CheckCircle, Copy, AlertCircle, MapPin, Sparkles, Building2, ExternalLink, ShoppingBag } from 'lucide-react';
 import { StoreInfo } from '../types';
+import { INITIAL_STORE_INFO } from '../data/jamuProducts';
 
 interface DeliveryAndPaymentInfoProps {
   storeInfo?: StoreInfo;
@@ -9,8 +10,8 @@ interface DeliveryAndPaymentInfoProps {
 export const DeliveryAndPaymentInfo: React.FC<DeliveryAndPaymentInfoProps> = ({ storeInfo }) => {
   const [copied, setCopied] = useState(false);
 
-  const goFoodUrl = storeInfo?.goFoodUrl || 'https://gofood.link/a/jamu_solo_mbak_ayuk';
-  const grabFoodUrl = storeInfo?.grabFoodUrl || 'https://food.grab.com/id/id/restaurant/jamu-solo-mbak-ayuk';
+  const goFoodUrl = storeInfo?.goFoodUrl || INITIAL_STORE_INFO.goFoodUrl;
+  const grabFoodUrl = storeInfo?.grabFoodUrl || INITIAL_STORE_INFO.grabFoodUrl;
 
   const bankAccount = {
     bank: 'BCA',
@@ -237,7 +238,7 @@ export const DeliveryAndPaymentInfo: React.FC<DeliveryAndPaymentInfoProps> = ({ 
             <div className="bg-stone-950 p-4 rounded-2xl border border-stone-800 flex items-center gap-3">
               <MapPin className="w-5 h-5 text-amber-400 flex-shrink-0" />
               <p className="text-xs text-stone-300">
-                Alamat Ambil Langsung: <strong className="text-amber-200">Jl. Slamet Riyadi No. 128, Solo (Surakarta)</strong>
+                Alamat Ambil Langsung: <strong className="text-amber-200">{storeInfo?.address || INITIAL_STORE_INFO.address}</strong>
               </p>
             </div>
 

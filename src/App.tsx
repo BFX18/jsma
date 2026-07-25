@@ -16,18 +16,20 @@ import { WhatsAppFloatingButton } from './components/WhatsAppFloatingButton';
 import { formatPhoneNumber } from './utils/formatters';
 
 export default function App() {
-  // Store info state (saved in localStorage if user edits)
+  // Store info code version tracking (for automatic synchronization upon code edits)
+  const currentCodeHash = JSON.stringify(INITIAL_STORE_INFO);
+
   const [storeInfo, setStoreInfo] = useState<StoreInfo>(() => {
     try {
       const saved = localStorage.getItem('jamu_store_info');
-      if (saved) {
+      const savedCodeHash = localStorage.getItem('jamu_store_info_code_hash');
+
+      if (saved && savedCodeHash === currentCodeHash) {
         const parsed = JSON.parse(saved);
         return {
           ...INITIAL_STORE_INFO,
           ...parsed,
           whatsappNumber: formatPhoneNumber(parsed.whatsappNumber || INITIAL_STORE_INFO.whatsappNumber),
-          goFoodUrl: (parsed.goFoodUrl && parsed.goFoodUrl.trim() !== '') ? parsed.goFoodUrl : INITIAL_STORE_INFO.goFoodUrl,
-          grabFoodUrl: (parsed.grabFoodUrl && parsed.grabFoodUrl.trim() !== '') ? parsed.grabFoodUrl : INITIAL_STORE_INFO.grabFoodUrl,
         };
       }
     } catch (e) {
@@ -39,11 +41,33 @@ export default function App() {
     };
   });
 
+  // Automatically sync storeInfo state when developer updates INITIAL_STORE_INFO in code
   useEffect(() => {
     try {
-      localStorage.setItem('jamu_store_info', JSON.stringify(storeInfo));
+      const savedCodeHash = localStorage.getItem('jamu_store_info_code_hash');
+      if (savedCodeHash !== currentCodeHash) {
+        const updated: StoreInfo = {
+          ...INITIAL_STORE_INFO,
+          whatsappNumber: formatPhoneNumber(INITIAL_STORE_INFO.whatsappNumber),
+        };
+        setStoreInfo(updated);
+        localStorage.setItem('jamu_store_info', JSON.stringify(updated));
+        localStorage.setItem('jamu_store_info_code_hash', currentCodeHash);
+      }
     } catch (e) {}
-  }, [storeInfo]);
+  }, [currentCodeHash]);
+
+  const handleUpdateStoreInfo = (newInfo: StoreInfo) => {
+    const formatted: StoreInfo = {
+      ...newInfo,
+      whatsappNumber: formatPhoneNumber(newInfo.whatsappNumber),
+    };
+    setStoreInfo(formatted);
+    try {
+      localStorage.setItem('jamu_store_info', JSON.stringify(formatted));
+      localStorage.setItem('jamu_store_info_code_hash', currentCodeHash);
+    } catch (e) {}
+  };
 
   // UI States
   const [selectedProduct, setSelectedProduct] = useState<JamuProduct | null>(null);
@@ -161,7 +185,7 @@ export default function App() {
         isOpen={isSettingsOpen}
         onClose={() => setIsSettingsOpen(false)}
         storeInfo={storeInfo}
-        onSaveStoreInfo={(newInfo) => setStoreInfo(newInfo)}
+        onSaveStoreInfo={handleUpdateStoreInfo}
       />
 
     </div>

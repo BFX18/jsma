@@ -21,8 +21,8 @@ export const StoreInfoModal: React.FC<StoreInfoModalProps> = ({
   const [storeName, setStoreName] = useState(storeInfo.name);
   const [address, setAddress] = useState(storeInfo.address);
   const [openingHours, setOpeningHours] = useState(storeInfo.openingHours);
-  const [goFoodUrl, setGoFoodUrl] = useState(storeInfo.goFoodUrl || 'https://gofood.link/a/jamu_solo_mbak_ayuk');
-  const [grabFoodUrl, setGrabFoodUrl] = useState(storeInfo.grabFoodUrl || 'https://food.grab.com/id/id/restaurant/jamu-solo-mbak-ayuk');
+  const [goFoodUrl, setGoFoodUrl] = useState(storeInfo.goFoodUrl || INITIAL_STORE_INFO.goFoodUrl);
+  const [grabFoodUrl, setGrabFoodUrl] = useState(storeInfo.grabFoodUrl || INITIAL_STORE_INFO.grabFoodUrl);
   const [savedSuccess, setSavedSuccess] = useState(false);
 
   useEffect(() => {
@@ -31,8 +31,8 @@ export const StoreInfoModal: React.FC<StoreInfoModalProps> = ({
       setStoreName(storeInfo.name);
       setAddress(storeInfo.address);
       setOpeningHours(storeInfo.openingHours);
-      setGoFoodUrl(storeInfo.goFoodUrl || 'https://gofood.link/a/jamu_solo_mbak_ayuk');
-      setGrabFoodUrl(storeInfo.grabFoodUrl || 'https://food.grab.com/id/id/restaurant/jamu-solo-mbak-ayuk');
+      setGoFoodUrl(storeInfo.goFoodUrl || INITIAL_STORE_INFO.goFoodUrl);
+      setGrabFoodUrl(storeInfo.grabFoodUrl || INITIAL_STORE_INFO.grabFoodUrl);
     }
   }, [isOpen, storeInfo]);
 

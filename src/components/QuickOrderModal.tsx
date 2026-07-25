@@ -194,7 +194,7 @@ export const QuickOrderModal: React.FC<QuickOrderModalProps> = ({
             </div>
           ) : (
             <div className="p-3 bg-amber-500/10 border border-amber-500/30 rounded-xl text-xs text-amber-200">
-              📍 <strong>Alamat Ambil:</strong> Jl. Slamet Riyadi No. 128, Solo (Surakarta). Buka tiap hari.
+              📍 <strong>Alamat Ambil:</strong> {storeInfo.address}. {storeInfo.openingHours ? `Buka: ${storeInfo.openingHours}.` : ''}
             </div>
           )}
 
