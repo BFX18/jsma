@@ -46,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               Katalog Jamu
             </a>
             <a href="#pengiriman-pembayaran" className="hover:text-amber-400 transition-colors">
-              Pengiriman & BCA
+              Pengiriman & pembayaran
             </a>
             <a href="#ukuran-botol" className="hover:text-amber-400 transition-colors">
               Ukuran Botol
@@ -83,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             href="#pengiriman-pembayaran"
             className="px-3 py-1 rounded-full bg-stone-800/80 border border-stone-700/60 text-amber-300 whitespace-nowrap hover:bg-stone-700 transition-colors"
           >
-            🚚 Pengiriman & BCA
+            🚚 Pengiriman & pembayaran
           </a>
           <a
             href="#ukuran-botol"
