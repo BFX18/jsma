@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
-import { CreditCard, Truck, CheckCircle, Copy, AlertCircle, MapPin, Sparkles, Building2 } from 'lucide-react';
+import { CreditCard, Truck, CheckCircle, Copy, AlertCircle, MapPin, Sparkles, Building2, ExternalLink, ShoppingBag } from 'lucide-react';
+import { StoreInfo } from '../types';
 
-export const DeliveryAndPaymentInfo: React.FC = () => {
+interface DeliveryAndPaymentInfoProps {
+  storeInfo?: StoreInfo;
+}
+
+export const DeliveryAndPaymentInfo: React.FC<DeliveryAndPaymentInfoProps> = ({ storeInfo }) => {
   const [copied, setCopied] = useState(false);
+
+  const goFoodUrl = storeInfo?.goFoodUrl || 'https://gofood.link/a/jamu_solo_mbak_ayuk';
+  const grabFoodUrl = storeInfo?.grabFoodUrl || 'https://food.grab.com/id/id/restaurant/jamu-solo-mbak-ayuk';
 
   const bankAccount = {
     bank: 'BCA',
@@ -171,6 +179,59 @@ export const DeliveryAndPaymentInfo: React.FC = () => {
                   </p>
                 </div>
               ))}
+            </div>
+
+            {/* Link GoFood & GrabFood / GoSend & GrabExpress */}
+            <div className="bg-gradient-to-r from-stone-950 via-stone-900 to-stone-950 p-4 sm:p-5 rounded-2xl border border-amber-500/30 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-amber-300 flex items-center gap-1.5">
+                  <ShoppingBag className="w-4 h-4 text-emerald-400" />
+                  <span>Pesan Langsung via Aplikasi Gojek & Grab:</span>
+                </span>
+                <span className="text-[10px] text-stone-400 bg-stone-800 px-2 py-0.5 rounded-full border border-stone-700">
+                  Instant / Food
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {/* Gojek / GoFood Link Button */}
+                <a
+                  href={goFoodUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-between p-3 rounded-xl bg-[#00AA13]/15 hover:bg-[#00AA13]/25 border border-[#00AA13]/50 text-emerald-300 font-bold text-xs transition-all hover:scale-[1.01] group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded-lg bg-[#00AA13] text-white font-extrabold text-[11px] flex items-center justify-center shadow-md">
+                      Go
+                    </div>
+                    <div>
+                      <span className="block text-stone-100 font-bold">GoFood / GoSend</span>
+                      <span className="block text-[10px] text-stone-400">Order via Aplikasi Gojek</span>
+                    </div>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-[#00AA13] group-hover:translate-x-0.5 transition-transform" />
+                </a>
+
+                {/* Grab / GrabFood Link Button */}
+                <a
+                  href={grabFoodUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-between p-3 rounded-xl bg-[#00B14F]/15 hover:bg-[#00B14F]/25 border border-[#00B14F]/50 text-emerald-300 font-bold text-xs transition-all hover:scale-[1.01] group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded-lg bg-[#00B14F] text-white font-extrabold text-[11px] flex items-center justify-center shadow-md">
+                      Gr
+                    </div>
+                    <div>
+                      <span className="block text-stone-100 font-bold">GrabFood / GrabExpress</span>
+                      <span className="block text-[10px] text-stone-400">Order via Aplikasi Grab</span>
+                    </div>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-[#00B14F] group-hover:translate-x-0.5 transition-transform" />
+                </a>
+              </div>
             </div>
 
             <div className="bg-stone-950 p-4 rounded-2xl border border-stone-800 flex items-center gap-3">

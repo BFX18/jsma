@@ -111,7 +111,7 @@ export default function App() {
       </section>
 
       {/* Delivery & BCA Payment Announcement Section */}
-      <DeliveryAndPaymentInfo />
+      <DeliveryAndPaymentInfo storeInfo={storeInfo} />
 
       {/* Size Comparison & Bottle Options Section */}
       <SizeGuideSection />

@@ -21,6 +21,8 @@ export const StoreInfoModal: React.FC<StoreInfoModalProps> = ({
   const [storeName, setStoreName] = useState(storeInfo.name);
   const [address, setAddress] = useState(storeInfo.address);
   const [openingHours, setOpeningHours] = useState(storeInfo.openingHours);
+  const [goFoodUrl, setGoFoodUrl] = useState(storeInfo.goFoodUrl || 'https://gofood.link/a/jamu_solo_mbak_ayuk');
+  const [grabFoodUrl, setGrabFoodUrl] = useState(storeInfo.grabFoodUrl || 'https://food.grab.com/id/id/restaurant/jamu-solo-mbak-ayuk');
   const [savedSuccess, setSavedSuccess] = useState(false);
 
   useEffect(() => {
@@ -29,6 +31,8 @@ export const StoreInfoModal: React.FC<StoreInfoModalProps> = ({
       setStoreName(storeInfo.name);
       setAddress(storeInfo.address);
       setOpeningHours(storeInfo.openingHours);
+      setGoFoodUrl(storeInfo.goFoodUrl || 'https://gofood.link/a/jamu_solo_mbak_ayuk');
+      setGrabFoodUrl(storeInfo.grabFoodUrl || 'https://food.grab.com/id/id/restaurant/jamu-solo-mbak-ayuk');
     }
   }, [isOpen, storeInfo]);
 
@@ -42,6 +46,8 @@ export const StoreInfoModal: React.FC<StoreInfoModalProps> = ({
       whatsappNumber: formattedPhone,
       address,
       openingHours,
+      goFoodUrl,
+      grabFoodUrl,
     };
     onSaveStoreInfo(updated);
     setWhatsappNumber(formattedPhone);
@@ -58,6 +64,8 @@ export const StoreInfoModal: React.FC<StoreInfoModalProps> = ({
     setStoreName(INITIAL_STORE_INFO.name);
     setAddress(INITIAL_STORE_INFO.address);
     setOpeningHours(INITIAL_STORE_INFO.openingHours);
+    setGoFoodUrl(INITIAL_STORE_INFO.goFoodUrl || '');
+    setGrabFoodUrl(INITIAL_STORE_INFO.grabFoodUrl || '');
     setSavedSuccess(true);
     setTimeout(() => {
       setSavedSuccess(false);
@@ -150,6 +158,32 @@ export const StoreInfoModal: React.FC<StoreInfoModalProps> = ({
                 className="w-full pl-9 pr-3 py-2 bg-stone-950 border border-stone-700 rounded-xl text-stone-100"
               />
             </div>
+          </div>
+
+          <div>
+            <label className="block text-emerald-400 font-semibold mb-1">
+              Link GoFood / Gojek (Opsional)
+            </label>
+            <input
+              type="text"
+              placeholder="https://gofood.link/a/..."
+              value={goFoodUrl}
+              onChange={(e) => setGoFoodUrl(e.target.value)}
+              className="w-full px-3 py-2 bg-stone-950 border border-stone-700 rounded-xl text-stone-100 text-xs font-mono"
+            />
+          </div>
+
+          <div>
+            <label className="block text-emerald-400 font-semibold mb-1">
+              Link GrabFood / Grab (Opsional)
+            </label>
+            <input
+              type="text"
+              placeholder="https://food.grab.com/id/id/restaurant/..."
+              value={grabFoodUrl}
+              onChange={(e) => setGrabFoodUrl(e.target.value)}
+              className="w-full px-3 py-2 bg-stone-950 border border-stone-700 rounded-xl text-stone-100 text-xs font-mono"
+            />
           </div>
 
           <div className="flex gap-2 pt-1">

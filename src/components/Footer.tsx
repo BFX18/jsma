@@ -61,22 +61,48 @@ export const Footer: React.FC<FooterProps> = ({ storeInfo, onOpenSettings }) => 
           </div>
         </div>
 
-        {/* Quick WA CTA */}
+        {/* Quick WA CTA & Online Order */}
         <div className="md:col-span-3 space-y-3">
-          <h4 className="font-serif font-bold text-amber-200 text-sm">Pesan Cepat WA</h4>
+          <h4 className="font-serif font-bold text-amber-200 text-sm">Pesan Cepat & Aplikasi</h4>
           <p className="text-xs text-stone-400">
-            Ada pertanyaan atau ingin pemesanan dalam jumlah banyak (catering/acara)?
+            Pesan via WhatsApp atau langsung lewat aplikasi Gojek & Grab favorit Anda:
           </p>
 
-          <a
-            href={`https://wa.me/${formatPhoneNumber(storeInfo.whatsappNumber)}`}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs shadow-md transition-all"
-          >
-            <MessageCircle className="w-4 h-4" />
-            <span>Chat WhatsApp Seller</span>
-          </a>
+          <div className="flex flex-col gap-2">
+            <a
+              href={`https://wa.me/${formatPhoneNumber(storeInfo.whatsappNumber)}`}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs shadow-md transition-all justify-center"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>Chat WhatsApp Seller</span>
+            </a>
+
+            {storeInfo.goFoodUrl && (
+              <a
+                href={storeInfo.goFoodUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#00AA13]/20 hover:bg-[#00AA13]/30 border border-[#00AA13]/50 text-emerald-300 font-bold text-xs transition-all justify-center"
+              >
+                <span className="w-5 h-5 rounded bg-[#00AA13] text-white text-[10px] font-black flex items-center justify-center">Go</span>
+                <span>Pesan di GoFood</span>
+              </a>
+            )}
+
+            {storeInfo.grabFoodUrl && (
+              <a
+                href={storeInfo.grabFoodUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#00B14F]/20 hover:bg-[#00B14F]/30 border border-[#00B14F]/50 text-emerald-300 font-bold text-xs transition-all justify-center"
+              >
+                <span className="w-5 h-5 rounded bg-[#00B14F] text-white text-[10px] font-black flex items-center justify-center">Gr</span>
+                <span>Pesan di GrabFood</span>
+              </a>
+            )}
+          </div>
         </div>
 
       </div>
