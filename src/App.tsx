@@ -74,6 +74,10 @@ export default function App() {
       {/* Hero Section */}
       <HeroSection
         onScrollToCatalog={scrollToCatalog}
+        onOpenDetail={(prod) => setSelectedProduct(prod)}
+        onQuickOrderWA={(prod, size, qty) =>
+          setQuickOrderProduct({ product: prod, size, quantity: qty })
+        }
       />
 
       {/* Product Catalog Section */}
