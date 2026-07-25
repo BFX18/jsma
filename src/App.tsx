@@ -22,10 +22,13 @@ export default function App() {
       const saved = localStorage.getItem('jamu_store_info');
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (parsed.whatsappNumber) {
-          parsed.whatsappNumber = formatPhoneNumber(parsed.whatsappNumber);
-        }
-        return parsed;
+        return {
+          ...INITIAL_STORE_INFO,
+          ...parsed,
+          whatsappNumber: formatPhoneNumber(parsed.whatsappNumber || INITIAL_STORE_INFO.whatsappNumber),
+          goFoodUrl: (parsed.goFoodUrl && parsed.goFoodUrl.trim() !== '') ? parsed.goFoodUrl : INITIAL_STORE_INFO.goFoodUrl,
+          grabFoodUrl: (parsed.grabFoodUrl && parsed.grabFoodUrl.trim() !== '') ? parsed.grabFoodUrl : INITIAL_STORE_INFO.grabFoodUrl,
+        };
       }
     } catch (e) {
       // fallback
@@ -78,6 +81,7 @@ export default function App() {
         onQuickOrderWA={(prod, size, qty) =>
           setQuickOrderProduct({ product: prod, size, quantity: qty })
         }
+        storeInfo={storeInfo}
       />
 
       {/* Product Catalog Section */}

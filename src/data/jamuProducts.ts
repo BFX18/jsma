@@ -52,7 +52,7 @@ export const JAMU_PRODUCTS: JamuProduct[] = [
   },
   {
     id: 'temulawak',
-    name: 'Temulawak Sehat',
+    name: 'Temu Lawak',
     javaneseName: 'Temulawak',
     tagline: 'Pelindung fungsi hati & penetral asam lambung',
     category: 'Pencernaan & Vitalitas',
@@ -94,7 +94,7 @@ export const JAMU_PRODUCTS: JamuProduct[] = [
     shelfLife: '5-7 hari dalam kulkas',
     bestSeller: false,
     colorAccent: 'amber',
-    imageUrl: JAMU_IMAGE_ASSETS.products.gulaAsam
+    imageUrl: JAMU_IMAGE_ASSETS.products.asam_gula_jawa
   },
   {
     id: 'Sirih',
@@ -118,7 +118,7 @@ export const JAMU_PRODUCTS: JamuProduct[] = [
     bestSeller: false,
     badgeText: 'Racikan Khusus',
     colorAccent: 'red',
-    imageUrl: JAMU_IMAGE_ASSETS.products.cabePuyang
+    imageUrl: JAMU_IMAGE_ASSETS.products.sirih
   },
   {
     id: 'pahitan-sambiloto',
@@ -166,12 +166,12 @@ export const JAMU_PRODUCTS: JamuProduct[] = [
     bestSeller: true,
     badgeText: 'Khas Keraton',
     colorAccent: 'lime',
-    imageUrl: JAMU_IMAGE_ASSETS.products.sinom
+    imageUrl: JAMU_IMAGE_ASSETS.products.kunyittawar
   },
   {
-    id: 'Temu Lawak',
-    name: 'Temu Lawak',
-    javaneseName: 'Jamu Temu Lawak',
+    id: 'Mpon Mpon',
+    name: 'Mpon Mpon',
+    javaneseName: 'Jamu Mpon Mpon',
     tagline: 'Pelancar produksi ASI & penjaga kesegaran aroma tubuh',
     category: 'Ibu & Kesehatan',
     price250ml: 11000,
@@ -190,7 +190,7 @@ export const JAMU_PRODUCTS: JamuProduct[] = [
     bestSeller: false,
     badgeText: 'Pelancar ASI',
     colorAccent: 'teal',
-    imageUrl: JAMU_IMAGE_ASSETS.products.uyupUyup
+    imageUrl: JAMU_IMAGE_ASSETS.products.mponmpon
   },
   {
     id: 'wedang-jahe',
@@ -214,7 +214,7 @@ export const JAMU_PRODUCTS: JamuProduct[] = [
     bestSeller: true,
     badgeText: 'Penghangat Alami',
     colorAccent: 'rose',
-    imageUrl: JAMU_IMAGE_ASSETS.products.wedangJaheMerah
+    imageUrl: JAMU_IMAGE_ASSETS.products.wedangJahe
   }
 ];
 

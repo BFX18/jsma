@@ -8,21 +8,21 @@
  */
 
 export const JAMU_IMAGE_ASSETS = {
-  // 1. Gambar Latar Belakang & Visual Banner
-  heroBackground: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=1920',
-  heroShowcase: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&q=80&w=800',
-  heritageProcess: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&q=80&w=1000',
+  // 1. Gambar Latar Belakang & Visual Banner (Aset Lokal)
+  heroBackground: '/images/hero_bg.svg',
+  heroShowcase: '/images/kunir_asam.jpg',
+  heritageProcess: '/images/heritage_process.svg',
 
-  // 2. Gambar Foto 9 Varian Jamu Tradisional
+  // 2. Gambar Foto 9 Varian Jamu Tradisional (Aset Lokal)
   products: {
-    kunyitAsam: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&q=80&w=800',
-    berasKencur: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=800',
-    temulawak: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&q=80&w=800',
-    gulaAsam: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=800',
-    cabePuyang: 'https://images.unsplash.com/photo-1563822249510-04678c7873be?auto=format&fit=crop&q=80&w=800',
-    pahitanSambiloto: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=800',
-    sinom: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&q=80&w=800',
-    uyupUyup: 'https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&q=80&w=800',
-    wedangJaheMerah: 'https://images.unsplash.com/photo-1571934811356-5cc531766b34?auto=format&fit=crop&q=80&w=800',
+    kunyitAsam: '/images/kunir_asam.jpg',
+    berasKencur: '/images/beras_kencur.jpg',
+    temulawak: '/images/temu_lawak.jpg',
+    asam_gula_jawa: '/images/asam_gula_jawa.jpg',
+    mponmpon: '/images/mpon_mpon.jpg',
+    pahitanSambiloto: '/images/pahitan.jpg',
+    sirih: '/images/sirih.jpg',
+    kunyittawar: '/images/kunir_tawar.jpg',
+    wedangJahe: '/images/jahe.jpg',
   },
 };

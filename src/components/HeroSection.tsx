@@ -1,22 +1,26 @@
 import React from 'react';
-import { Sparkles, ShoppingBag, CheckCircle2, MessageCircle, HeartHandshake, ShieldCheck, Zap, Info } from 'lucide-react';
+import { Sparkles, ShoppingBag, CheckCircle2, MessageCircle, HeartHandshake, ShieldCheck, Zap, Info, ExternalLink } from 'lucide-react';
 import { JAMU_IMAGE_ASSETS } from '../data/images';
 import { JAMU_PRODUCTS } from '../data/jamuProducts';
 import { formatRupiah } from '../utils/formatters';
-import { JamuProduct, JamuSize } from '../types';
+import { JamuProduct, JamuSize, StoreInfo } from '../types';
 
 interface HeroSectionProps {
   onScrollToCatalog: () => void;
   onOpenDetail?: (product: JamuProduct) => void;
   onQuickOrderWA?: (product: JamuProduct, size: JamuSize, quantity: number) => void;
+  storeInfo?: StoreInfo;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   onScrollToCatalog,
   onOpenDetail,
   onQuickOrderWA,
+  storeInfo,
 }) => {
   const featuredProduct = JAMU_PRODUCTS[0]; // Kunyit Asam
+  const goFoodUrl = storeInfo?.goFoodUrl || 'https://gofood.link/a/jamu_solo_mbak_ayuk';
+  const grabFoodUrl = storeInfo?.grabFoodUrl || 'https://food.grab.com/id/id/restaurant/jamu-solo-mbak-ayuk';
 
   return (
     <div className="relative bg-stone-900 text-stone-100 overflow-hidden border-b border-amber-900/30">
@@ -85,6 +89,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               >
                 <CheckCircle2 className="w-5 h-5 text-amber-400" />
                 <span>Info Pengantaran & BCA</span>
+              </a>
+            </div>
+
+            {/* Online Delivery Badges */}
+            <div className="pt-2 flex flex-wrap items-center gap-2">
+              <span className="text-xs text-stone-400 font-medium mr-1">Tersedia di:</span>
+              <a
+                href={goFoodUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#00AA13]/20 hover:bg-[#00AA13]/30 border border-[#00AA13]/60 text-emerald-300 font-bold text-xs transition-all hover:scale-105"
+              >
+                <span className="w-4 h-4 rounded bg-[#00AA13] text-white text-[9px] font-black flex items-center justify-center">Go</span>
+                <span>GoFood</span>
+                <ExternalLink className="w-3 h-3 text-[#00AA13]" />
+              </a>
+
+              <a
+                href={grabFoodUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#00B14F]/20 hover:bg-[#00B14F]/30 border border-[#00B14F]/60 text-emerald-300 font-bold text-xs transition-all hover:scale-105"
+              >
+                <span className="w-4 h-4 rounded bg-[#00B14F] text-white text-[9px] font-black flex items-center justify-center">Gr</span>
+                <span>GrabFood</span>
+                <ExternalLink className="w-3 h-3 text-[#00B14F]" />
               </a>
             </div>
 
