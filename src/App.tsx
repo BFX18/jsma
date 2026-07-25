@@ -129,7 +129,6 @@ export default function App() {
       {/* Footer */}
       <Footer
         storeInfo={storeInfo}
-        onOpenSettings={() => setIsSettingsOpen(true)}
       />
 
       {/* Floating Action Button */}

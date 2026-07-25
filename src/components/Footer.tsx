@@ -5,10 +5,10 @@ import { formatPhoneNumber } from '../utils/formatters';
 
 interface FooterProps {
   storeInfo: StoreInfo;
-  onOpenSettings: () => void;
+  onOpenSettings?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ storeInfo, onOpenSettings }) => {
+export const Footer: React.FC<FooterProps> = ({ storeInfo }) => {
   return (
     <footer className="bg-stone-900 border-t border-amber-900/40 text-stone-300 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 pb-8 border-b border-stone-800">
@@ -30,15 +30,6 @@ export const Footer: React.FC<FooterProps> = ({ storeInfo, onOpenSettings }) => 
           <p className="text-xs text-stone-400 leading-relaxed max-w-sm">
             Toko online spesialis racikan jamu tradisional 100% alami tanpa pengawet. Menyediakan 9 varian jamu lengkap dengan kemasan botol 250 ML & 500 ML higienis.
           </p>
-
-          <div className="pt-1">
-            <button
-              onClick={onOpenSettings}
-              className="text-xs text-amber-400 hover:underline flex items-center gap-1 font-semibold"
-            >
-              ⚙️ Pengaturan Nomor WA Toko Penjual
-            </button>
-          </div>
         </div>
 
         {/* Store Info & Hours */}
