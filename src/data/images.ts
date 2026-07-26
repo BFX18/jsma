@@ -11,7 +11,8 @@ export const JAMU_IMAGE_ASSETS = {
   // 1. Gambar Latar Belakang & Visual Banner (Aset Lokal)
   heroBackground: '/images/hero_bg.svg',
   heroShowcase: '/images/kunir_asam.jpg',
-  heritageProcess: '/images/heritage_process.svg',
+  heritageBackground: '/images/hero_bg.svg',
+  heritageProcess: '/images/jamus.jpg',
 
   // 2. Gambar Foto 9 Varian Jamu Tradisional (Aset Lokal)
   products: {

@@ -45,7 +45,7 @@ export const DeliveryAndPaymentInfo: React.FC<DeliveryAndPaymentInfoProps> = ({ 
       title: 'Jarak di atas 3 KM',
       badge: 'Rp 7.000 Dasar',
       badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
-      description: 'Untuk jarak di atas 3 KM dikenakan biaya ongkir dasar sebesar Rp 7.000 (penyesuaian tarif jarak lanjut).',
+      description: 'Untuk jarak di atas 3 KM dikenakan biaya ongkir dasar sebesar Rp 7.000 dan tambahan Rp 3.000 per KM(penyesuaian tarif jarak lanjut).',
     },
     {
       id: 4,

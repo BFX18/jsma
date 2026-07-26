@@ -3,9 +3,21 @@ import { Leaf, Award, HeartHandshake, ShieldCheck, Sparkles, Coffee } from 'luci
 import { JAMU_IMAGE_ASSETS } from '../data/images';
 
 export const HeritageStory: React.FC = () => {
+  const bgImage = JAMU_IMAGE_ASSETS.heritageBackground || JAMU_IMAGE_ASSETS.heroBackground;
+
   return (
-    <section id="khasiat" className="bg-stone-900 py-16 px-4 sm:px-6 lg:px-8 border-t border-amber-900/30">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <section id="khasiat" className="relative bg-stone-900 py-16 px-4 sm:px-6 lg:px-8 border-t border-amber-900/30 overflow-hidden">
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 z-0 opacity-25 pointer-events-none">
+        <img
+          src={bgImage}
+          alt="Latar Belakang Heritage"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-900 via-stone-900/70 to-stone-900" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto space-y-12">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
@@ -39,7 +51,7 @@ export const HeritageStory: React.FC = () => {
                 <div className="w-9 h-9 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 font-bold">
                   🍯
                 </div>
-                <h4 className="font-serif font-bold text-stone-100 text-sm">Gula Aren & Jawa Murni</h4>
+                <h4 className="font-serif font-bold text-stone-100 text-sm">Gula Jawa Murni</h4>
                 <p className="text-xs text-stone-400 leading-normal">
                   Menggunakan pemanis alami murni yang aman dan nyaman di tenggorokan.
                 </p>

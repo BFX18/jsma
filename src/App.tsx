@@ -6,7 +6,6 @@ import { HeroSection } from './components/HeroSection';
 import { ProductCard } from './components/ProductCard';
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { QuickOrderModal } from './components/QuickOrderModal';
-import { StoreInfoModal } from './components/StoreInfoModal';
 import { SizeGuideSection } from './components/SizeGuideSection';
 import { HeritageStory } from './components/HeritageStory';
 import { HowToOrder } from './components/HowToOrder';
@@ -179,13 +178,6 @@ export default function App() {
         initialQuantity={quickOrderProduct?.quantity || 1}
         onClose={() => setQuickOrderProduct(null)}
         storeInfo={storeInfo}
-      />
-
-      <StoreInfoModal
-        isOpen={isSettingsOpen}
-        onClose={() => setIsSettingsOpen(false)}
-        storeInfo={storeInfo}
-        onSaveStoreInfo={handleUpdateStoreInfo}
       />
 
     </div>
