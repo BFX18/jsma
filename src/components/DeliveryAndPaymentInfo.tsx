@@ -157,7 +157,7 @@ export const DeliveryAndPaymentInfo: React.FC<DeliveryAndPaymentInfoProps> = ({ 
                 <h3 className="font-serif font-bold text-lg text-amber-100">
                   Pengumuman Ketentuan Ongkos Kirim
                 </h3>
-                <p className="text-xs text-stone-400">Aturan Pengantaran Toko & Opsi Kurir Pihak Ke-3</p>
+                <p className="text-xs text-stone-400">Aturan Pengantaran Toko & Opsi Kurir Pihak Ke-3 {"("} Penentuan jarak pengiriman mengacu pada lokasi yang dibagikan melalui Google Maps. {")"}</p>
               </div>
             </div>
 
