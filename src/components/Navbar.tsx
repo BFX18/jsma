@@ -1,6 +1,7 @@
 import React from 'react';
-import { Leaf, Settings, PhoneCall, MessageCircle } from 'lucide-react';
+import { Settings, PhoneCall, MessageCircle } from 'lucide-react';
 import { formatPhoneNumber } from '../utils/formatters';
+import { JAMU_IMAGE_ASSETS } from '../data/images';
 
 interface NavbarProps {
   onOpenSettings: () => void;
@@ -20,11 +21,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           
           {/* Logo & Brand */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-amber-500 via-amber-600 to-amber-800 p-0.5 flex items-center justify-center shadow-lg shadow-amber-900/30 flex-shrink-0">
-              <div className="w-full h-full bg-stone-900 rounded-full flex items-center justify-center">
-                <Leaf className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" />
-              </div>
-            </div>
+            <img
+              src={JAMU_IMAGE_ASSETS.logo}
+              alt="Logo Jamu"
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-amber-300 shadow-md bg-white flex-shrink-0 p-0.5"
+              referrerPolicy="no-referrer"
+            />
             <div>
               <div className="flex items-center gap-1.5 sm:gap-2">
                 <span className="font-serif text-sm sm:text-xl lg:text-2xl font-bold tracking-wide text-amber-100 uppercase truncate max-w-[170px] xs:max-w-none">

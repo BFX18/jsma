@@ -9,6 +9,8 @@
 
 export const JAMU_IMAGE_ASSETS = {
   // 1. Gambar Latar Belakang & Visual Banner (Aset Lokal)
+  logo: '/images/border-logo.png',
+  logo1: '/images/logo1.png',
   heroBackground: '/images/hero_bg.svg',
   heroShowcase: '/images/kunir_asam.jpg',
   heritageBackground: '/images/hero_bg.svg',

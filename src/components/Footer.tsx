@@ -2,6 +2,7 @@ import React from 'react';
 import { StoreInfo } from '../types';
 import { Leaf, PhoneCall, MapPin, Clock, MessageCircle } from 'lucide-react';
 import { formatPhoneNumber } from '../utils/formatters';
+import { JAMU_IMAGE_ASSETS } from '../data/images';
 
 interface FooterProps {
   storeInfo: StoreInfo;
@@ -16,9 +17,12 @@ export const Footer: React.FC<FooterProps> = ({ storeInfo }) => {
         {/* Brand */}
         <div className="md:col-span-5 space-y-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400">
-              <Leaf className="w-5 h-5" />
-            </div>
+            <img
+              src={JAMU_IMAGE_ASSETS.logo}
+              alt="Logo Jamu"
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-amber-300 shadow-md bg-white flex-shrink-0 p-0.5"
+              referrerPolicy="no-referrer"
+            />
             <div>
               <span className="font-serif text-xl font-bold text-amber-100 block">
                 {storeInfo.name}
