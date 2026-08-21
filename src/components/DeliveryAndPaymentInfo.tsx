@@ -129,12 +129,12 @@ export const DeliveryAndPaymentInfo: React.FC<DeliveryAndPaymentInfoProps> = ({ 
                 </div>
               </div>
 
-              <div>
+              {/* <div>
                 <span className="text-[11px] text-stone-400 block mb-0.5">Atas Nama (A/N):</span>
                 <p className="font-bold text-sm text-stone-100">
                   {bankAccount.accountName}
                 </p>
-              </div>
+              </div> */}
             </div>
 
             <div className="bg-amber-500/10 p-3.5 rounded-2xl border border-amber-500/20 flex items-start gap-2.5 text-xs text-amber-200/90 leading-relaxed">
